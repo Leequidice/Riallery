@@ -28,13 +28,13 @@ export default function ArtworkCard({ artwork, onViewLarge }: ArtworkCardProps) 
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="group relative bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
+      className="group relative bg-neutral-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl border border-neutral-700 transition-all duration-300"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <Link href={`/gallery/${artwork.slug}`} className="block">
         {/* Image Container */}
-        <div className="relative aspect-[4/5] overflow-hidden bg-neutral-100">
+        <div className="relative aspect-[4/5] overflow-hidden bg-neutral-700">
           <Image
             src={artwork.imageUrl}
             alt={artwork.title}
@@ -72,7 +72,7 @@ export default function ArtworkCard({ artwork, onViewLarge }: ArtworkCardProps) 
           {/* Featured badge */}
           {artwork.isFeatured && (
             <div className="absolute top-3 left-3">
-              <span className="bg-neutral-900 text-white text-xs px-2 py-1 rounded-full font-medium">
+              <span className="bg-primary-400 text-neutral-900 text-xs px-2 py-1 rounded-full font-medium">
                 Featured
               </span>
             </div>
@@ -82,28 +82,28 @@ export default function ArtworkCard({ artwork, onViewLarge }: ArtworkCardProps) 
         {/* Content */}
         <div className="p-4">
           {/* Title */}
-          <h3 className="text-lg font-semibold text-neutral-900 mb-2 line-clamp-2 group-hover:text-neutral-700 transition-colors">
+          <h3 className="text-lg font-semibold text-white mb-2 line-clamp-2 group-hover:text-primary-400 transition-colors">
             {artwork.title}
           </h3>
           
           {/* Artist info */}
-          <div className="flex items-center text-sm text-neutral-600 mb-3">
+          <div className="flex items-center text-sm text-neutral-300 mb-3">
             <User className="h-4 w-4 mr-1.5" />
             <span>{artwork.artist.name}</span>
           </div>
           
           {/* Description */}
-          <p className="text-sm text-neutral-600 line-clamp-2 mb-3 leading-relaxed">
+          <p className="text-sm text-neutral-400 line-clamp-2 mb-3 leading-relaxed">
             {artwork.description}
           </p>
           
           {/* Metadata */}
-          <div className="flex items-center justify-between text-xs text-neutral-500">
+          <div className="flex items-center justify-between text-xs text-neutral-400">
             <div className="flex items-center space-x-3">
-              <span className="bg-neutral-100 px-2 py-1 rounded-full">
+              <span className="bg-neutral-700 text-neutral-300 px-2 py-1 rounded-full">
                 {artwork.medium.name}
               </span>
-              <span className="bg-neutral-100 px-2 py-1 rounded-full">
+              <span className="bg-neutral-700 text-neutral-300 px-2 py-1 rounded-full">
                 {artwork.style.name}
               </span>
             </div>
@@ -122,13 +122,13 @@ export default function ArtworkCard({ artwork, onViewLarge }: ArtworkCardProps) 
               {artwork.themes.slice(0, 3).map((theme) => (
                 <span
                   key={theme._id}
-                  className="text-xs text-neutral-500 bg-neutral-50 px-2 py-1 rounded-full"
+                  className="text-xs text-neutral-400 bg-neutral-700 px-2 py-1 rounded-full"
                 >
                   {theme.name}
                 </span>
               ))}
               {artwork.themes.length > 3 && (
-                <span className="text-xs text-neutral-400 bg-neutral-50 px-2 py-1 rounded-full">
+                <span className="text-xs text-neutral-400 bg-neutral-700 px-2 py-1 rounded-full">
                   +{artwork.themes.length - 3}
                 </span>
               )}

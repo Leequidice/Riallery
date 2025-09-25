@@ -75,12 +75,12 @@ export default function GalleryContent() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen">
+      <div className="min-h-screen bg-neutral-900">
         <div className="container py-8">
           <div className="flex items-center justify-center py-16">
             <div className="text-center">
-              <Loader2 className="h-8 w-8 animate-spin mx-auto mb-4 text-neutral-400" />
-              <p className="text-neutral-600">Loading gallery...</p>
+              <Loader2 className="h-8 w-8 animate-spin mx-auto mb-4 text-primary-400" />
+              <p className="text-neutral-300">Loading gallery...</p>
             </div>
           </div>
         </div>
@@ -89,12 +89,12 @@ export default function GalleryContent() {
   }
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-neutral-900">
       <div className="container py-8">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-light mb-4 tracking-wide">g a l l e r y</h1>
-          <p className="text-neutral-600 text-lg">
+          <h1 className="text-4xl md:text-5xl font-light mb-6 tracking-wide text-white">g a l l e r y</h1>
+          <p className="text-neutral-300 text-lg">
             discover artworks from the rialo community
           </p>
         </div>
@@ -126,8 +126,8 @@ export default function GalleryContent() {
 
         {galleryData && galleryData.artworks.length === 0 && (
           <div className="text-center py-16">
-            <p className="text-neutral-600 text-lg mb-4">No artworks found</p>
-            <p className="text-neutral-500">Try adjusting your filters or search criteria</p>
+            <p className="text-neutral-300 text-lg mb-4">No artworks found</p>
+            <p className="text-neutral-400">Try adjusting your filters or search criteria</p>
           </div>
         )}
       </div>

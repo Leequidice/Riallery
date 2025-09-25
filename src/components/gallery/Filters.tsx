@@ -108,18 +108,18 @@ export default function Filters({
   };
 
   return (
-    <div className="bg-white border border-neutral-200 rounded-lg">
+    <div className="bg-neutral-800 border border-neutral-700 rounded-lg">
       {/* Filter Header */}
-      <div className="p-4 border-b border-neutral-200">
+      <div className="p-4 border-b border-neutral-700">
         <div className="flex items-center justify-between">
           <button
             onClick={() => setIsExpanded(!isExpanded)}
-            className="flex items-center space-x-2 text-neutral-900 hover:text-neutral-700 transition-colors"
+            className="flex items-center space-x-2 text-white hover:text-primary-400 transition-colors"
           >
             <Filter className="h-5 w-5" />
             <span className="font-medium">Filters</span>
             {hasActiveFilters && (
-              <span className="bg-neutral-900 text-white text-xs px-2 py-1 rounded-full">
+              <span className="bg-primary-400 text-neutral-900 text-xs px-2 py-1 rounded-full">
                 {getActiveFilterCount()}
               </span>
             )}
@@ -135,7 +135,7 @@ export default function Filters({
               variant="ghost"
               size="sm"
               onClick={clearFilters}
-              className="text-neutral-600 hover:text-neutral-900"
+              className="text-neutral-400 hover:text-white"
             >
               <X className="h-4 w-4 mr-1" />
               Clear
