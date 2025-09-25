@@ -37,7 +37,7 @@ export default function RootLayout({
       <body className="font-sans antialiased bg-neutral-900 text-white" suppressHydrationWarning>
         <div className="flex min-h-screen flex-col">
           <Header />
-          <main className="flex-1">
+          <main className="flex-1 pt-20">
             {children}
           </main>
           <Footer />

@@ -6,7 +6,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-white border-t border-neutral-200">
+    <footer className="border-t border-neutral-200" style={{backgroundColor: '#e8e3d5'}}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand Section */}
@@ -23,15 +23,6 @@ export default function Footer() {
             
             {/* Social Links */}
             <div className="flex items-center space-x-4">
-              <a
-                href={socialLinks.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-lg text-neutral-600 hover:text-neutral-900 hover:bg-primary-400/10 transition-colors"
-                aria-label="Follow us on Instagram"
-              >
-                <Instagram className="h-5 w-5" />
-              </a>
               <a
                 href={socialLinks.twitter}
                 target="_blank"

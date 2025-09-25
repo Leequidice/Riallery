@@ -14,10 +14,10 @@ export default function Home() {
       <section className="bg-primary-400 text-neutral-900">
         <div className="container py-3">
           <div className="text-center">
-            <span className="text-sm font-medium">
+            <span className="text-sm font-medium" style={{color: '#e8e3d5'}}>
               Riallery Community Gallery - Celebrating Creative Expression
             </span>
-            <Link href="/about" className="ml-4 text-sm underline hover:no-underline">
+            <Link href="/about" className="ml-4 text-sm underline hover:no-underline" style={{color: '#e8e3d5'}}>
               Learn More
             </Link>
           </div>
@@ -35,13 +35,13 @@ export default function Home() {
         <div className="container py-16 lg:py-24 relative z-10">
           <div className="max-w-6xl mx-auto">
             {/* Main Heading */}
-            <h1 className="text-6xl md:text-7xl lg:text-8xl font-light text-white mb-12 leading-tight">
+            <h1 className="text-6xl md:text-7xl lg:text-8xl font-light text-teal-300 mb-12 leading-tight">
               Discover. Create.{' '}
               <span className="font-bold">Riallery</span>.
             </h1>
 
             {/* Subtitle */}
-            <p className="text-xl md:text-2xl text-neutral-300 mb-12 max-w-3xl leading-relaxed">
+            <p className="text-xl md:text-2xl mb-12 max-w-3xl leading-relaxed" style={{color: '#e8e3d5'}}>
               A curated digital gallery celebrating the creative spirit of the Rialo community.
             </p>
 
@@ -57,16 +57,16 @@ export default function Home() {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-12 pt-12 border-t border-neutral-700">
               <div>
-                <div className="text-4xl font-bold text-white mb-2">200+</div>
-                <div className="text-neutral-400">Artworks</div>
+                <div className="text-4xl font-bold mb-2" style={{color: '#e8e3d5'}}>200+</div>
+                <div style={{color: '#e8e3d5'}}>Artworks</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-white mb-2">50+</div>
-                <div className="text-neutral-400">Artists</div>
+                <div className="text-4xl font-bold mb-2" style={{color: '#e8e3d5'}}>50+</div>
+                <div style={{color: '#e8e3d5'}}>Artists</div>
               </div>
               <div>
-                <div className="text-4xl font-bold text-white mb-2">12</div>
-                <div className="text-neutral-400">Features</div>
+                <div className="text-4xl font-bold mb-2" style={{color: '#e8e3d5'}}>12</div>
+                <div style={{color: '#e8e3d5'}}>Features</div>
               </div>
             </div>
           </div>
@@ -79,10 +79,10 @@ export default function Home() {
           <div className="container">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                <h2 className="text-3xl md:text-4xl font-bold text-teal-300 mb-4">
                   This Week&apos;s Feature
                 </h2>
-                <p className="text-neutral-300 text-lg max-w-2xl mx-auto">
+                <p className="text-lg max-w-2xl mx-auto" style={{color: '#e8e3d5'}}>
                   Celebrating exceptional artists from our community
                 </p>
               </div>
@@ -105,16 +105,16 @@ export default function Home() {
                 {/* Feature Content */}
                 <div className="space-y-6">
                   <div>
-                    <h3 className="text-2xl font-bold text-neutral-900 mb-2">
+                    <h3 className="text-2xl font-bold mb-2" style={{color: '#e8e3d5'}}>
                       {currentFeature.artist.name}
                     </h3>
-                    <p className="text-neutral-600 leading-relaxed">
+                    <p className="leading-relaxed" style={{color: '#e8e3d5'}}>
                       {currentFeature.introduction}
                     </p>
                   </div>
 
                   {currentFeature.artistNoteQuote && (
-                    <blockquote className="border-l-4 border-neutral-300 pl-6 italic text-neutral-700">
+                    <blockquote className="border-l-4 border-neutral-300 pl-6 italic" style={{color: '#e8e3d5'}}>
                       &quot;{currentFeature.artistNoteQuote}&quot;
                     </blockquote>
                   )}
@@ -145,10 +145,10 @@ export default function Home() {
         <div className="container">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-teal-300 mb-4">
                 Recent Artworks
               </h2>
-              <p className="text-neutral-300 text-lg max-w-2xl mx-auto">
+              <p className="text-lg max-w-2xl mx-auto" style={{color: '#e8e3d5'}}>
                 Latest additions to our growing collection
               </p>
             </div>
@@ -170,10 +170,10 @@ export default function Home() {
                     />
                     <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
                     <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="text-white text-sm font-medium truncate">
+                      <div className="text-sm font-medium truncate" style={{color: '#e8e3d5'}}>
                         {artwork.title}
                       </div>
-                      <div className="text-white/80 text-xs truncate">
+                      <div className="text-xs truncate" style={{color: '#e8e3d5'}}>
                         {artwork.artist.name}
                       </div>
                     </div>
@@ -184,7 +184,7 @@ export default function Home() {
 
             <div className="text-center">
               <Link href="/gallery">
-                <Button size="lg">
+                <Button size="lg" style={{color: '#e8e3d5'}}>
                   View Full Gallery
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
@@ -198,23 +198,23 @@ export default function Home() {
       <section className="bg-neutral-900 text-white py-16 lg:py-20 relative overflow-hidden">
         <div className="container relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-light mb-6 tracking-wide">
+            <h2 className="text-3xl md:text-4xl font-light mb-6 tracking-wide text-teal-300">
               j o i n   t h e   c o m m u n i t y
             </h2>
-            <p className="text-xl text-neutral-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl mb-8 max-w-2xl mx-auto leading-relaxed" style={{color: '#e8e3d5'}}>
               submit your artwork to be considered for the gallery or featured in our weekly spotlight. 
               <br />
               <span className="text-primary-400 font-medium">real artists. real community. real impact.</span>
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link href="/contact">
-                <Button variant="secondary" size="lg" className="w-full sm:w-auto">
+                <Button variant="outline" size="lg" className="w-full sm:w-auto border-0 hover:opacity-90" style={{backgroundColor: '#e8e3d5', color: '#000000'}}>
                   Submit Your Art
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
               <Link href="/about">
-                <Button variant="ghost" size="lg" className="w-full sm:w-auto text-white hover:bg-white/10">
+                <Button variant="ghost" size="lg" className="w-full sm:w-auto hover:bg-white/10" style={{color: '#e8e3d5'}}>
                   Learn More About Us
                 </Button>
               </Link>
