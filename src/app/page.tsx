@@ -1,10 +1,9 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, Eye, Star } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import RotatingFeature from '@/components/home/RotatingFeature';
 import { 
-  getMockCurrentFeature, 
   getMockArtworks, 
   mockArtworks, 
   mockMemes, 
@@ -16,7 +15,6 @@ import {
 } from '@/lib/mock-data';
 
 export default function Home() {
-  const currentFeature = getMockCurrentFeature();
   const recentArtworks = getMockArtworks(1, 8).artworks;
   
   // Calculate real stats

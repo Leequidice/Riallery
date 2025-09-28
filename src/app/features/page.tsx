@@ -9,6 +9,7 @@ import { motion } from 'framer-motion';
 import { Star, Calendar, Grid } from 'lucide-react';
 import ArtworkCard from '@/components/gallery/ArtworkCard';
 import { Button } from '@/components/ui/Button';
+import MediaDisplay from '@/components/ui/MediaDisplay';
 import { 
   getMockWeeklyFeaturedArtworks, 
   getMockWeeklyFeaturedMemes, 
@@ -84,7 +85,7 @@ function FeaturesContent() {
               </h1>
             </div>
             <p className="text-neutral-300 text-lg mb-6 max-w-2xl mx-auto">
-              discover this week's handpicked selections from the rialo community
+              discover this week&apos;s handpicked selections from the rialo community
             </p>
             <div className="flex items-center justify-center text-neutral-400 text-sm">
               <Calendar className="h-4 w-4 mr-2" />
@@ -230,12 +231,14 @@ function FeaturesContent() {
           onClick={() => setSelectedArtwork(null)}
         >
           <div className="max-w-4xl max-h-full">
-            <img
-              src={selectedArtwork.imageUrl}
-              alt={selectedArtwork.title}
-              className="max-w-full max-h-full object-contain"
-              onClick={(e) => e.stopPropagation()}
-            />
+            <div onClick={(e) => e.stopPropagation()}>
+              <MediaDisplay
+                src={selectedArtwork.imageUrl}
+                alt={selectedArtwork.title}
+                fill={false}
+                className="max-w-full max-h-full object-contain"
+              />
+            </div>
           </div>
         </div>
       )}

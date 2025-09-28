@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { ArrowLeft, Calendar, Tag, User, Share2 } from 'lucide-react';
+import { ArrowLeft, Calendar, User, Share2 } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import MediaDisplay from '@/components/ui/MediaDisplay';
 import { getMockArtworkBySlug } from '@/lib/mock-data';

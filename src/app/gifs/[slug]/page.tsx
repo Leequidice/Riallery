@@ -2,9 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
-import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowLeft, Calendar, User, Tag } from 'lucide-react';
+import { ArrowLeft, Calendar } from 'lucide-react';
 import MediaDisplay from '@/components/ui/MediaDisplay';
 import { getMockGifBySlug } from '@/lib/mock-data';
 import type { Artwork } from '@/types';
@@ -54,7 +53,7 @@ export default function GifPage() {
         <div className="container py-8">
           <div className="text-center py-16">
             <h1 className="text-2xl font-light text-white mb-4">GIF not found</h1>
-            <p className="text-neutral-400 mb-8">The GIF you're looking for doesn't exist.</p>
+            <p className="text-neutral-400 mb-8">The GIF you&apos;re looking for doesn&apos;t exist.</p>
             <Link 
               href="/gifs" 
               className="inline-flex items-center gap-2 px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg transition-colors"

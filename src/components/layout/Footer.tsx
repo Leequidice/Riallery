@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Instagram, Twitter, Globe, Mail } from 'lucide-react';
+import { Twitter, Mail, Globe } from 'lucide-react';
 import { socialLinks, navigationLinks } from '@/config/site';
 
 export default function Footer() {
