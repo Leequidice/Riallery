@@ -44,12 +44,20 @@ export const siteConfig = {
 
 export const navigationLinks = [
   {
+    title: 'Weekly Features',
+    href: '/features',
+  },
+  {
     title: 'Gallery',
     href: '/gallery',
   },
   {
-    title: 'Weekly Features',
-    href: '/features',
+    title: 'Memes',
+    href: '/memes',
+  },
+  {
+    title: 'GIFs',
+    href: '/gifs',
   },
   {
     title: 'About',

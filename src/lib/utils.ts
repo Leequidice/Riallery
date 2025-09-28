@@ -128,3 +128,12 @@ export function generateSocialShareUrls(url: string, title: string) {
     copy: url,
   };
 }
+
+export function isVideoFile(url: string): boolean {
+  const videoExtensions = ['.mp4', '.webm', '.ogg', '.mov', '.avi'];
+  return videoExtensions.some(ext => url.toLowerCase().includes(ext));
+}
+
+export function isGifFile(url: string): boolean {
+  return url.toLowerCase().includes('.gif');
+}

@@ -2,11 +2,31 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, Eye, Star } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
-import { getMockCurrentFeature, getMockArtworks } from '@/lib/mock-data';
+import RotatingFeature from '@/components/home/RotatingFeature';
+import { 
+  getMockCurrentFeature, 
+  getMockArtworks, 
+  mockArtworks, 
+  mockMemes, 
+  mockGifs, 
+  mockArtists,
+  weeklyFeaturedArtworks,
+  weeklyFeaturedMemes,
+  weeklyFeaturedGifs 
+} from '@/lib/mock-data';
 
 export default function Home() {
   const currentFeature = getMockCurrentFeature();
   const recentArtworks = getMockArtworks(1, 8).artworks;
+  
+  // Calculate real stats
+  const totalArtworks = mockArtworks.length + mockMemes.length + mockGifs.length + weeklyFeaturedArtworks.length + weeklyFeaturedMemes.length + weeklyFeaturedGifs.length;
+  const totalArtists = mockArtists.length;
+  const totalFeatures = weeklyFeaturedArtworks.length + weeklyFeaturedMemes.length + weeklyFeaturedGifs.length;
+  
+  // Combine all weekly features and shuffle them
+  const allWeeklyFeatures = [...weeklyFeaturedArtworks, ...weeklyFeaturedMemes, ...weeklyFeaturedGifs];
+  const shuffledFeatures = allWeeklyFeatures.sort(() => Math.random() - 0.5);
 
   return (
     <div className="min-h-screen">
@@ -57,15 +77,15 @@ export default function Home() {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-12 pt-12 border-t border-neutral-700">
               <div>
-                <div className="text-4xl font-bold mb-2" style={{color: '#e8e3d5'}}>200+</div>
+                <div className="text-4xl font-bold mb-2" style={{color: '#e8e3d5'}}>{totalArtworks}</div>
                 <div style={{color: '#e8e3d5'}}>Artworks</div>
               </div>
               <div>
-                <div className="text-4xl font-bold mb-2" style={{color: '#e8e3d5'}}>50+</div>
+                <div className="text-4xl font-bold mb-2" style={{color: '#e8e3d5'}}>{totalArtists}</div>
                 <div style={{color: '#e8e3d5'}}>Artists</div>
               </div>
               <div>
-                <div className="text-4xl font-bold mb-2" style={{color: '#e8e3d5'}}>12</div>
+                <div className="text-4xl font-bold mb-2" style={{color: '#e8e3d5'}}>{totalFeatures}</div>
                 <div style={{color: '#e8e3d5'}}>Features</div>
               </div>
             </div>
@@ -73,68 +93,21 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Current Feature Section */}
-      {currentFeature && (
+      {/* Weekly Features Section */}
+      {shuffledFeatures.length > 0 && (
         <section className="bg-neutral-800 py-16 lg:py-20">
           <div className="container">
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-teal-300 mb-4">
-                  This Week&apos;s Feature
+                  This Week&apos;s Features
                 </h2>
                 <p className="text-lg max-w-2xl mx-auto" style={{color: '#e8e3d5'}}>
-                  Celebrating exceptional artists from our community
+                  Celebrating exceptional artwork, memes, and GIFs from our community
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-                {/* Featured Artwork */}
-                <div className="relative">
-                  <div className="aspect-[4/5] relative rounded-lg overflow-hidden shadow-lg">
-                    <Image
-                      src={currentFeature.featuredArtworks[0].imageUrl}
-                      alt={currentFeature.featuredArtworks[0].title}
-                      fill
-                      sizes="(max-width: 1024px) 100vw, 50vw"
-                      className="object-cover"
-                      priority
-                    />
-                  </div>
-                </div>
-
-                {/* Feature Content */}
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="text-2xl font-bold mb-2" style={{color: '#e8e3d5'}}>
-                      {currentFeature.artist.name}
-                    </h3>
-                    <p className="leading-relaxed" style={{color: '#e8e3d5'}}>
-                      {currentFeature.introduction}
-                    </p>
-                  </div>
-
-                  {currentFeature.artistNoteQuote && (
-                    <blockquote className="border-l-4 border-neutral-300 pl-6 italic" style={{color: '#e8e3d5'}}>
-                      &quot;{currentFeature.artistNoteQuote}&quot;
-                    </blockquote>
-                  )}
-
-                  <div className="flex items-center space-x-4">
-                    <Link href={`/features/${currentFeature.slug}`}>
-                      <Button>
-                        View Full Feature
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Button>
-                    </Link>
-                    <Link href={`/gallery?artist=${currentFeature.artist.slug}`}>
-                      <Button variant="ghost">
-                        <Eye className="mr-2 h-4 w-4" />
-                        View All Works
-                      </Button>
-                    </Link>
-                  </div>
-                </div>
-              </div>
+              <RotatingFeature allFeatures={shuffledFeatures} />
             </div>
           </div>
         </section>
@@ -199,7 +172,7 @@ export default function Home() {
         <div className="container relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-light mb-6 tracking-wide text-teal-300">
-              j o i n   t h e   c o m m u n i t y
+              join the community
             </h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto leading-relaxed" style={{color: '#e8e3d5'}}>
               submit your artwork to be considered for the gallery or featured in our weekly spotlight. 

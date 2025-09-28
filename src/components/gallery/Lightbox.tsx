@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
@@ -15,6 +14,7 @@ import {
   ExternalLink 
 } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
+import MediaDisplay from '@/components/ui/MediaDisplay';
 import type { Artwork } from '@/types';
 import { formatDateShort, generateSocialShareUrls, createShareUrl } from '@/lib/utils';
 
@@ -132,16 +132,15 @@ export default function Lightbox({
               className="relative bg-white rounded-lg overflow-hidden shadow-2xl"
             >
               <div className="relative aspect-[4/5] max-h-[80vh]">
-                <Image
+                <MediaDisplay
                   src={artwork.imageUrl}
                   alt={artwork.title}
                   fill
                   sizes="(max-width: 1024px) 100vw, 66vw"
-                  className={`object-contain transition-opacity duration-300 ${
-                    isImageLoaded ? 'opacity-100' : 'opacity-0'
-                  }`}
+                  className="object-contain"
                   onLoad={() => setIsImageLoaded(true)}
                   priority
+                  controls={true}
                 />
                 
                 {!isImageLoaded && (

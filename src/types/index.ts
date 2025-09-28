@@ -28,6 +28,7 @@ export interface Artwork {
   themes?: Theme[];
   event?: Event;
   yearCreated?: number;
+  contentType?: 'artwork' | 'meme' | 'gif';
   status: 'pending' | 'approved' | 'rejected' | 'draft';
   submissionDate: string;
   publicationDate?: string;
@@ -105,6 +106,7 @@ export interface GalleryFilters {
   event?: string;
   artist?: string;
   yearCreated?: string[];
+  contentType?: 'artwork' | 'meme' | 'gif';
   sortBy?: 'newest' | 'oldest' | 'title' | 'artist';
 }
 
