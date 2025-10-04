@@ -18,7 +18,8 @@ export default function Home() {
   const recentArtworks = getMockArtworks(1, 8).artworks;
   
   // Calculate real stats
-  const totalArtworks = mockArtworks.length + mockMemes.length + mockGifs.length + weeklyFeaturedArtworks.length + weeklyFeaturedMemes.length + weeklyFeaturedGifs.length;
+  const totalArtworks = mockArtworks.length + weeklyFeaturedArtworks.length; // Only artworks, not memes/gifs
+  const totalContent = mockArtworks.length + mockMemes.length + mockGifs.length + weeklyFeaturedArtworks.length + weeklyFeaturedMemes.length + weeklyFeaturedGifs.length; // All content
   const totalArtists = mockArtists.length;
   const totalFeatures = weeklyFeaturedArtworks.length + weeklyFeaturedMemes.length + weeklyFeaturedGifs.length;
   
@@ -75,8 +76,8 @@ export default function Home() {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-12 pt-12 border-t border-neutral-700">
               <div>
-                <div className="text-4xl font-bold mb-2" style={{color: '#e8e3d5'}}>{totalArtworks}</div>
-                <div style={{color: '#e8e3d5'}}>Artworks</div>
+                <div className="text-4xl font-bold mb-2" style={{color: '#e8e3d5'}}>{totalContent}</div>
+                <div style={{color: '#e8e3d5'}}>Total Content</div>
               </div>
               <div>
                 <div className="text-4xl font-bold mb-2" style={{color: '#e8e3d5'}}>{totalArtists}</div>
@@ -84,7 +85,7 @@ export default function Home() {
               </div>
               <div>
                 <div className="text-4xl font-bold mb-2" style={{color: '#e8e3d5'}}>{totalFeatures}</div>
-                <div style={{color: '#e8e3d5'}}>Features</div>
+                <div style={{color: '#e8e3d5'}}>Weekly Features</div>
               </div>
             </div>
           </div>
