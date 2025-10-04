@@ -519,14 +519,14 @@ export const mockGifs: Artwork[] = [
 export const weeklyFeaturedArtworks: Artwork[] = [
   {
     _id: 'weekly-art1',
-    title: 'Dynamic Vision',
-    slug: 'weekly-dynamic-vision-batuhantkmk',
-    description: 'By batuhantkmk',
-    imageUrl: '/Artists/Weekly Features/Arts/batuhantkmk.mp4',
-    artist: getArtistByFilename('batuhantkmk.mp4'),
-    medium: mockMediums[0],
-    style: mockStyles[4],
-    themes: [mockThemes[3], mockThemes[4]],
+    title: 'Ceqih\'s Creative Vision',
+    slug: 'weekly-creative-vision-ceqih',
+    description: 'By ceqih',
+    imageUrl: '/Artists/Weekly Features/Arts/ceqih.jpg',
+    artist: getArtistByFilename('ceqih'),
+    medium: mockMediums[1],
+    style: mockStyles[0],
+    themes: [mockThemes[0], mockThemes[2]],
     yearCreated: 2025,
     contentType: 'artwork',
     status: 'approved',
@@ -538,14 +538,14 @@ export const weeklyFeaturedArtworks: Artwork[] = [
   },
   {
     _id: 'weekly-art2',
-    title: 'Digital Harmony',
-    slug: 'weekly-digital-harmony-haruvip',
-    description: 'By haruvip',
-    imageUrl: '/Artists/Weekly Features/Arts/haruvip.webp',
-    artist: getArtistByFilename('haruvip.webp'),
+    title: 'Ciao\'s Digital Masterpiece',
+    slug: 'weekly-digital-masterpiece-ciao0910',
+    description: 'By ciao0910',
+    imageUrl: '/Artists/Weekly Features/Arts/ciao0910.webp',
+    artist: getArtistByFilename('ciao0910'),
     medium: mockMediums[0],
     style: mockStyles[1],
-    themes: [mockThemes[0], mockThemes[2]],
+    themes: [mockThemes[1], mockThemes[3]],
     yearCreated: 2025,
     contentType: 'artwork',
     status: 'approved',
@@ -557,14 +557,14 @@ export const weeklyFeaturedArtworks: Artwork[] = [
   },
   {
     _id: 'weekly-art3',
-    title: 'Immersive Experience',
-    slug: 'weekly-immersive-experience-himu-xyz',
-    description: 'By himu_xyz',
-    imageUrl: '/Artists/Weekly Features/Arts/himu_xyz.mp4',
-    artist: getArtistByFilename('himu_xyz.mp4'),
+    title: 'Dark Thinking',
+    slug: 'weekly-dark-thinking-darkthgink',
+    description: 'By darkthgink',
+    imageUrl: '/Artists/Weekly Features/Arts/darkthgink.webp',
+    artist: getArtistByFilename('darkthgink'),
     medium: mockMediums[0],
-    style: mockStyles[4],
-    themes: [mockThemes[3], mockThemes[5]],
+    style: mockStyles[2],
+    themes: [mockThemes[2], mockThemes[4]],
     yearCreated: 2025,
     contentType: 'artwork',
     status: 'approved',
@@ -576,14 +576,14 @@ export const weeklyFeaturedArtworks: Artwork[] = [
   },
   {
     _id: 'weekly-art4',
-    title: 'Enigmatic Flow',
-    slug: 'weekly-enigmatic-flow-lika-enigma',
-    description: 'By lika_enigma',
-    imageUrl: '/Artists/Weekly Features/Arts/lika_enigma.mp4',
-    artist: getArtistByFilename('lika_enigma.mp4'),
+    title: 'DLDW Artistic Expression',
+    slug: 'weekly-artistic-expression-dldw1314',
+    description: 'By dldw1314',
+    imageUrl: '/Artists/Weekly Features/Arts/dldw1314.webp',
+    artist: getArtistByFilename('dldw1314'),
     medium: mockMediums[0],
     style: mockStyles[3],
-    themes: [mockThemes[1], mockThemes[4]],
+    themes: [mockThemes[0], mockThemes[3]],
     yearCreated: 2025,
     contentType: 'artwork',
     status: 'approved',
@@ -595,14 +595,14 @@ export const weeklyFeaturedArtworks: Artwork[] = [
   },
   {
     _id: 'weekly-art5',
-    title: 'Contemporary Vision',
-    slug: 'weekly-contemporary-vision-remwasdie',
-    description: 'By remwasdie',
-    imageUrl: '/Artists/Weekly Features/Arts/remwasdie.webp',
-    artist: getArtistByFilename('remwasdie.webp'),
+    title: 'HRX Vision',
+    slug: 'weekly-hrx-vision-hrx0005',
+    description: 'By hrx0005',
+    imageUrl: '/Artists/Weekly Features/Arts/hrx0005.webp',
+    artist: getArtistByFilename('hrx0005'),
     medium: mockMediums[0],
-    style: mockStyles[2],
-    themes: [mockThemes[0], mockThemes[2]],
+    style: mockStyles[4],
+    themes: [mockThemes[1], mockThemes[4]],
     yearCreated: 2025,
     contentType: 'artwork',
     status: 'approved',
@@ -614,14 +614,14 @@ export const weeklyFeaturedArtworks: Artwork[] = [
   },
   {
     _id: 'weekly-art6',
-    title: 'Web Innovation',
-    slug: 'weekly-web-innovation-web300fa',
-    description: 'By web300fa',
-    imageUrl: '/Artists/Weekly Features/Arts/web300fa.webp',
-    artist: getArtistByFilename('web300fa.webp'),
+    title: 'JDR Creative Design',
+    slug: 'weekly-creative-design-jdr525',
+    description: 'By jdr525',
+    imageUrl: '/Artists/Weekly Features/Arts/jdr525.webp',
+    artist: getArtistByFilename('jdr525'),
     medium: mockMediums[0],
-    style: mockStyles[4],
-    themes: [mockThemes[3], mockThemes[4]],
+    style: mockStyles[0],
+    themes: [mockThemes[2], mockThemes[5]],
     yearCreated: 2025,
     contentType: 'artwork',
     status: 'approved',
@@ -633,14 +633,90 @@ export const weeklyFeaturedArtworks: Artwork[] = [
   },
   {
     _id: 'weekly-art7',
-    title: 'Digital Expression',
-    slug: 'weekly-digital-expression-zll',
-    description: 'By zll_1013575110',
-    imageUrl: '/Artists/Weekly Features/Arts/zll_1013575110.webp',
-    artist: getArtistByFilename('zll_1013575110.webp'),
+    title: 'Lueguo Motion Art',
+    slug: 'weekly-motion-art-lueguo-video',
+    description: 'By lueguo',
+    imageUrl: '/Artists/Weekly Features/Arts/lueguo.mp4',
+    artist: getArtistByFilename('lueguo'),
     medium: mockMediums[0],
     style: mockStyles[1],
-    themes: [mockThemes[0], mockThemes[4]],
+    themes: [mockThemes[0], mockThemes[3]],
+    yearCreated: 2025,
+    contentType: 'artwork',
+    status: 'approved',
+    submissionDate: '2025-09-25',
+    publicationDate: '2025-09-28',
+    isFeatured: true,
+    createdAt: '2025-09-25',
+    updatedAt: '2025-09-28',
+  },
+  {
+    _id: 'weekly-art8',
+    title: 'Lueguo Static Art',
+    slug: 'weekly-static-art-lueguo-image',
+    description: 'By lueguo',
+    imageUrl: '/Artists/Weekly Features/Arts/lueguo.webp',
+    artist: getArtistByFilename('lueguo'),
+    medium: mockMediums[0],
+    style: mockStyles[2],
+    themes: [mockThemes[1], mockThemes[4]],
+    yearCreated: 2025,
+    contentType: 'artwork',
+    status: 'approved',
+    submissionDate: '2025-09-25',
+    publicationDate: '2025-09-28',
+    isFeatured: true,
+    createdAt: '2025-09-25',
+    updatedAt: '2025-09-28',
+  },
+  {
+    _id: 'weekly-art9',
+    title: 'May Motion Creation',
+    slug: 'weekly-motion-creation-may821',
+    description: 'By may821',
+    imageUrl: '/Artists/Weekly Features/Arts/may821.mp4',
+    artist: getArtistByFilename('may821'),
+    medium: mockMediums[0],
+    style: mockStyles[3],
+    themes: [mockThemes[2], mockThemes[5]],
+    yearCreated: 2025,
+    contentType: 'artwork',
+    status: 'approved',
+    submissionDate: '2025-09-25',
+    publicationDate: '2025-09-28',
+    isFeatured: true,
+    createdAt: '2025-09-25',
+    updatedAt: '2025-09-28',
+  },
+  {
+    _id: 'weekly-art10',
+    title: 'Nova\'s Artistic Vision',
+    slug: 'weekly-artistic-vision-novanguyen2802',
+    description: 'By novanguyen2802',
+    imageUrl: '/Artists/Weekly Features/Arts/novanguyen2802.webp',
+    artist: getArtistByFilename('novanguyen2802'),
+    medium: mockMediums[0],
+    style: mockStyles[4],
+    themes: [mockThemes[0], mockThemes[2]],
+    yearCreated: 2025,
+    contentType: 'artwork',
+    status: 'approved',
+    submissionDate: '2025-09-25',
+    publicationDate: '2025-09-28',
+    isFeatured: true,
+    createdAt: '2025-09-25',
+    updatedAt: '2025-09-28',
+  },
+  {
+    _id: 'weekly-art11',
+    title: 'Tinky Viki Creation',
+    slug: 'weekly-viki-creation-tinkyviki',
+    description: 'By tinkyviki',
+    imageUrl: '/Artists/Weekly Features/Arts/tinkyviki.webp',
+    artist: getArtistByFilename('tinkyviki'),
+    medium: mockMediums[0],
+    style: mockStyles[0],
+    themes: [mockThemes[1], mockThemes[3]],
     yearCreated: 2025,
     contentType: 'artwork',
     status: 'approved',
@@ -655,11 +731,11 @@ export const weeklyFeaturedArtworks: Artwork[] = [
 export const weeklyFeaturedMemes: Artwork[] = [
   {
     _id: 'weekly-meme1',
-    title: 'Digital Humor',
-    slug: 'weekly-digital-humor-0xdivy',
-    description: 'By 0xdivy',
-    imageUrl: '/Artists/Weekly Features/Memes/0xdivy.webp',
-    artist: getArtistByFilename('0xdivy'),
+    title: 'Dani\'s Humor',
+    slug: 'weekly-humor-daniviecmi',
+    description: 'By daniviecmi',
+    imageUrl: '/Artists/Weekly Features/Memes/daniviecmi.webp',
+    artist: getArtistByFilename('daniviecmi'),
     medium: mockMediums[0],
     style: mockStyles[5],
     themes: [mockThemes[3], mockThemes[5]],
@@ -674,14 +750,14 @@ export const weeklyFeaturedMemes: Artwork[] = [
   },
   {
     _id: 'weekly-meme2',
-    title: 'Animated Comedy',
-    slug: 'weekly-animated-comedy-0xdivy2',
-    description: 'By 0xdivy',
-    imageUrl: '/Artists/Weekly Features/Memes/0xdivy2.gif',
-    artist: getArtistByFilename('0xdivy'),
+    title: 'Dorock\'s Comedy',
+    slug: 'weekly-comedy-dorock34',
+    description: 'By dorock34',
+    imageUrl: '/Artists/Weekly Features/Memes/dorock34.mp4',
+    artist: getArtistByFilename('dorock34'),
     medium: mockMediums[0],
     style: mockStyles[5],
-    themes: [mockThemes[3], mockThemes[5]],
+    themes: [mockThemes[2], mockThemes[5]],
     yearCreated: 2025,
     contentType: 'meme',
     status: 'approved',
@@ -693,14 +769,14 @@ export const weeklyFeaturedMemes: Artwork[] = [
   },
   {
     _id: 'weekly-meme3',
-    title: 'Video Meme Magic',
-    slug: 'weekly-video-meme-magic-akka-pa',
-    description: 'By Akka Pa',
-    imageUrl: '/Artists/Weekly Features/Memes/Akka Pa.mp4',
-    artist: getArtistByFilename('Akka Pa.mp4'),
+    title: 'Hyuga\'s Meme Magic',
+    slug: 'weekly-meme-magic-hyuga37512',
+    description: 'By hyuga37512',
+    imageUrl: '/Artists/Weekly Features/Memes/hyuga37512.webp',
+    artist: getArtistByFilename('hyuga37512'),
     medium: mockMediums[0],
     style: mockStyles[5],
-    themes: [mockThemes[2], mockThemes[5]],
+    themes: [mockThemes[3], mockThemes[4]],
     yearCreated: 2025,
     contentType: 'meme',
     status: 'approved',
@@ -712,14 +788,14 @@ export const weeklyFeaturedMemes: Artwork[] = [
   },
   {
     _id: 'weekly-meme4',
-    title: 'Tech Humor',
-    slug: 'weekly-tech-humor-its-axios',
-    description: 'By Its_axios',
-    imageUrl: '/Artists/Weekly Features/Memes/Its_axios.mp4',
-    artist: getArtistByFilename('Its_axios.mp4'),
+    title: 'Karan\'s Dedhaa',
+    slug: 'weekly-dedhaa-karandedhaa',
+    description: 'By karandedhaa',
+    imageUrl: '/Artists/Weekly Features/Memes/karandedhaa.webp',
+    artist: getArtistByFilename('karandedhaa'),
     medium: mockMediums[0],
     style: mockStyles[5],
-    themes: [mockThemes[2], mockThemes[5]],
+    themes: [mockThemes[2], mockThemes[3]],
     yearCreated: 2025,
     contentType: 'meme',
     status: 'approved',
@@ -731,14 +807,14 @@ export const weeklyFeaturedMemes: Artwork[] = [
   },
   {
     _id: 'weekly-meme5',
-    title: 'Super Meme',
-    slug: 'weekly-super-meme-siiiuuperman',
-    description: 'By siiiuuperman',
-    imageUrl: '/Artists/Weekly Features/Memes/siiiuuperman.webp',
-    artist: getArtistByFilename('siiiuuperman.webp'),
+    title: 'Mofeoluwa\'s Comedy',
+    slug: 'weekly-comedy-mofeoluwa2',
+    description: 'By mofeoluwa2',
+    imageUrl: '/Artists/Weekly Features/Memes/mofeoluwa2.webp',
+    artist: getArtistByFilename('mofeoluwa2'),
     medium: mockMediums[0],
     style: mockStyles[5],
-    themes: [mockThemes[2], mockThemes[5]],
+    themes: [mockThemes[1], mockThemes[5]],
     yearCreated: 2025,
     contentType: 'meme',
     status: 'approved',
@@ -750,11 +826,30 @@ export const weeklyFeaturedMemes: Artwork[] = [
   },
   {
     _id: 'weekly-meme6',
-    title: 'Srikanth\'s Comedy',
-    slug: 'weekly-srikanths-comedy-srikanth',
-    description: 'By srikanth',
-    imageUrl: '/Artists/Weekly Features/Memes/srikanth.mp4',
-    artist: getArtistByFilename('srikanth.mp4'),
+    title: 'Nafis\'s Humor',
+    slug: 'weekly-humor-nafisnin',
+    description: 'By nafisnin',
+    imageUrl: '/Artists/Weekly Features/Memes/nafisnin.webp',
+    artist: getArtistByFilename('nafisnin'),
+    medium: mockMediums[0],
+    style: mockStyles[5],
+    themes: [mockThemes[3], mockThemes[4]],
+    yearCreated: 2025,
+    contentType: 'meme',
+    status: 'approved',
+    submissionDate: '2025-09-25',
+    publicationDate: '2025-09-28',
+    isFeatured: true,
+    createdAt: '2025-09-25',
+    updatedAt: '2025-09-28',
+  },
+  {
+    _id: 'weekly-meme7',
+    title: 'Travis\'s Meme',
+    slug: 'weekly-meme-travis0n',
+    description: 'By travis0n_',
+    imageUrl: '/Artists/Weekly Features/Memes/travis0n_.webp',
+    artist: getArtistByFilename('travis0n_'),
     medium: mockMediums[0],
     style: mockStyles[5],
     themes: [mockThemes[2], mockThemes[5]],
@@ -772,14 +867,33 @@ export const weeklyFeaturedMemes: Artwork[] = [
 export const weeklyFeaturedGifs: Artwork[] = [
   {
     _id: 'weekly-gif1',
-    title: 'Featured Animation',
-    slug: 'weekly-featured-animation-feriset',
+    title: 'Feriset\'s Animation',
+    slug: 'weekly-animation-feriset',
     description: 'By feriset',
-    imageUrl: '/Artists/Weekly Features/gifs/feriset.gif',
-    artist: getArtistByFilename('feriset.gif'),
+    imageUrl: '/Artists/Weekly Features/Gifs/feriset.gif',
+    artist: getArtistByFilename('feriset'),
     medium: mockMediums[0],
     style: mockStyles[4],
-    themes: [mockThemes[3], mockThemes[4]],
+    themes: [mockThemes[0], mockThemes[2]],
+    yearCreated: 2025,
+    contentType: 'gif',
+    status: 'approved',
+    submissionDate: '2025-09-25',
+    publicationDate: '2025-09-28',
+    isFeatured: true,
+    createdAt: '2025-09-25',
+    updatedAt: '2025-09-28',
+  },
+  {
+    _id: 'weekly-gif2',
+    title: 'Rexley\'s Motion',
+    slug: 'weekly-motion-rexleys',
+    description: 'By rexleys',
+    imageUrl: '/Artists/Weekly Features/Gifs/rexleys.mp4',
+    artist: getArtistByFilename('rexleys'),
+    medium: mockMediums[0],
+    style: mockStyles[3],
+    themes: [mockThemes[1], mockThemes[4]],
     yearCreated: 2025,
     contentType: 'gif',
     status: 'approved',
@@ -807,7 +921,23 @@ export function getMockArtworks(page: number = 1, limit: number = 12) {
 }
 
 export function getMockArtworkBySlug(slug: string): Artwork | null {
-  return mockArtworks.find(artwork => artwork.slug === slug) || null;
+  // Search in regular artworks first
+  const artwork = mockArtworks.find(artwork => artwork.slug === slug);
+  if (artwork) return artwork;
+  
+  // Search in weekly featured artworks
+  const weeklyArtwork = weeklyFeaturedArtworks.find(artwork => artwork.slug === slug);
+  if (weeklyArtwork) return weeklyArtwork;
+  
+  // Search in weekly featured memes
+  const weeklyMeme = weeklyFeaturedMemes.find(artwork => artwork.slug === slug);
+  if (weeklyMeme) return weeklyMeme;
+  
+  // Search in weekly featured gifs
+  const weeklyGif = weeklyFeaturedGifs.find(artwork => artwork.slug === slug);
+  if (weeklyGif) return weeklyGif;
+  
+  return null;
 }
 
 export function getMockMemes(page: number = 1, limit: number = 12) {
@@ -905,4 +1035,73 @@ export function getMockCurrentFeature(): WeeklyFeature | null {
 
 export function getMockWeeklyFeatureBySlug(slug: string): WeeklyFeature | null {
   return mockWeeklyFeatures.find(feature => feature.slug === slug) || null;
+}
+
+// Navigation function to get previous/next artwork in collection
+export function getArtworkNavigation(currentSlug: string, contentType?: string) {
+  let collection: Artwork[] = [];
+  let baseUrl = '/gallery';
+  
+  // Determine which collection to use based on content type or by finding the artwork
+  if (contentType === 'meme') {
+    collection = [...mockMemes, ...weeklyFeaturedMemes];
+    baseUrl = '/memes';
+  } else if (contentType === 'gif') {
+    collection = [...mockGifs, ...weeklyFeaturedGifs];
+    baseUrl = '/gifs';
+  } else {
+    // For artworks, search in all collections to find where the current artwork is
+    const artworkInMain = mockArtworks.find(art => art.slug === currentSlug);
+    const artworkInWeeklyArt = weeklyFeaturedArtworks.find(art => art.slug === currentSlug);
+    const artworkInWeeklyMemes = weeklyFeaturedMemes.find(art => art.slug === currentSlug);
+    const artworkInWeeklyGifs = weeklyFeaturedGifs.find(art => art.slug === currentSlug);
+    
+    if (artworkInMain) {
+      collection = mockArtworks;
+      baseUrl = '/gallery';
+    } else if (artworkInWeeklyArt) {
+      collection = weeklyFeaturedArtworks;
+      baseUrl = '/gallery';
+    } else if (artworkInWeeklyMemes) {
+      collection = weeklyFeaturedMemes;
+      baseUrl = '/memes';
+    } else if (artworkInWeeklyGifs) {
+      collection = weeklyFeaturedGifs;
+      baseUrl = '/gifs';
+    } else {
+      // Fallback to main artworks
+      collection = mockArtworks;
+      baseUrl = '/gallery';
+    }
+  }
+  
+  const currentIndex = collection.findIndex(art => art.slug === currentSlug);
+  
+  if (currentIndex === -1) {
+    return { 
+      prev: null, 
+      next: null, 
+      collection: 'unknown', 
+      baseUrl,
+      currentIndex: 1,
+      total: collection.length
+    };
+  }
+  
+  const prev = currentIndex > 0 ? collection[currentIndex - 1] : null;
+  const next = currentIndex < collection.length - 1 ? collection[currentIndex + 1] : null;
+  
+  // Determine collection name for display
+  let collectionName = 'Gallery';
+  if (baseUrl === '/memes') collectionName = 'Memes';
+  if (baseUrl === '/gifs') collectionName = 'GIFs';
+  
+  return {
+    prev,
+    next,
+    collection: collectionName,
+    baseUrl,
+    currentIndex: currentIndex + 1,
+    total: collection.length
+  };
 }

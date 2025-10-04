@@ -5,12 +5,14 @@ import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowLeft, Calendar } from 'lucide-react';
 import MediaDisplay from '@/components/ui/MediaDisplay';
-import { getMockGifBySlug } from '@/lib/mock-data';
+import { useKeyboardNavigation } from '@/hooks/useKeyboardNavigation';
+import { getMockGifBySlug, getArtworkNavigation } from '@/lib/mock-data';
 import type { Artwork } from '@/types';
 
 export default function GifPage() {
   const params = useParams();
   const [gif, setGif] = useState<Artwork | null>(null);
+  const [navigation, setNavigation] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -20,6 +22,11 @@ export default function GifPage() {
         // In a real app, this would be an API call
         const foundGif = getMockGifBySlug(params.slug as string);
         setGif(foundGif);
+        
+        if (foundGif) {
+          const nav = getArtworkNavigation(foundGif.slug, 'gif');
+          setNavigation(nav);
+        }
       } catch (error) {
         console.error('Error fetching gif:', error);
       } finally {
@@ -31,6 +38,12 @@ export default function GifPage() {
       fetchGif();
     }
   }, [params.slug]);
+
+  // Enable keyboard navigation
+  useKeyboardNavigation({
+    prevUrl: navigation?.prev ? `${navigation.baseUrl}/${navigation.prev.slug}` : undefined,
+    nextUrl: navigation?.next ? `${navigation.baseUrl}/${navigation.next.slug}` : undefined,
+  });
 
   if (isLoading) {
     return (
@@ -82,7 +95,7 @@ export default function GifPage() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
-          {/* Media */}
+          {/* Media with Navigation */}
           <div className="relative bg-neutral-800 rounded-lg overflow-hidden" style={{ height: 'min(80vh, 800px)' }}>
             <MediaDisplay
               src={gif.imageUrl}
@@ -93,6 +106,38 @@ export default function GifPage() {
               priority
               controls={false}
             />
+
+            {/* Navigation Arrows */}
+            {navigation && (navigation.prev || navigation.next) && (
+              <>
+                {/* Previous Arrow */}
+                {navigation.prev && (
+                  <Link 
+                    href={`${navigation.baseUrl}/${navigation.prev.slug}`}
+                    className="absolute left-4 top-1/2 -translate-y-1/2 bg-neutral-800/90 hover:bg-neutral-700/90 text-white rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110"
+                  >
+                    <ArrowLeft className="h-6 w-6" />
+                  </Link>
+                )}
+
+                {/* Next Arrow */}
+                {navigation.next && (
+                  <Link 
+                    href={`${navigation.baseUrl}/${navigation.next.slug}`}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 bg-neutral-800/90 hover:bg-neutral-700/90 text-white rounded-full p-3 shadow-lg transition-all duration-200 hover:scale-110"
+                  >
+                    <ArrowLeft className="h-6 w-6 rotate-180" />
+                  </Link>
+                )}
+              </>
+            )}
+
+            {/* Collection Info - Bottom of Image */}
+            {navigation && (
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-neutral-800/90 backdrop-blur-sm text-white text-sm px-3 py-1 rounded-full shadow-lg">
+                {navigation.currentIndex} of {navigation.total} in {navigation.collection}
+              </div>
+            )}
           </div>
 
           {/* Details */}
@@ -118,6 +163,13 @@ export default function GifPage() {
                   <span>Published {new Date(gif.publicationDate).getFullYear()}</span>
                 </div>
               )}
+            </div>
+
+            {/* Keyboard Navigation Hint */}
+            <div className="flex items-center justify-center text-xs text-neutral-400 pt-4">
+              <kbd className="px-2 py-1 bg-neutral-800 rounded text-neutral-300 text-xs mr-1">←</kbd>
+              <kbd className="px-2 py-1 bg-neutral-800 rounded text-neutral-300 text-xs mr-2">→</kbd>
+              Use arrow keys to navigate
             </div>
           </div>
         </div>
