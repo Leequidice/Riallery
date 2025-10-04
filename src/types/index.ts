@@ -34,6 +34,8 @@ export interface Artwork {
   publicationDate?: string;
   rejectionReason?: string;
   isFeatured: boolean;
+  isWeeklyFeatured?: boolean; // New flag for weekly features
+  weeklyFeatureDate?: string; // When it was featured
   moderatedBy?: User;
   createdAt: string;
   updatedAt: string;
