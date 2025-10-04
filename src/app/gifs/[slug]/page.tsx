@@ -12,7 +12,14 @@ import type { Artwork } from '@/types';
 export default function GifPage() {
   const params = useParams();
   const [gif, setGif] = useState<Artwork | null>(null);
-  const [navigation, setNavigation] = useState<any>(null);
+  const [navigation, setNavigation] = useState<{
+    prev: Artwork | null;
+    next: Artwork | null;
+    baseUrl: string;
+    collection: string;
+    currentIndex: number;
+    total: number;
+  } | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {

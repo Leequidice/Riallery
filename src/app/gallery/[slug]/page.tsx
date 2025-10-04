@@ -15,7 +15,14 @@ import type { Artwork } from '@/types';
 export default function ArtworkPage() {
   const params = useParams();
   const [artwork, setArtwork] = useState<Artwork | null>(null);
-  const [navigation, setNavigation] = useState<any>(null);
+  const [navigation, setNavigation] = useState<{
+    prev: Artwork | null;
+    next: Artwork | null;
+    baseUrl: string;
+    collection: string;
+    currentIndex: number;
+    total: number;
+  } | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
