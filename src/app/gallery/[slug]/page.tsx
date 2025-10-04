@@ -114,7 +114,7 @@ export default function ArtworkPage() {
             )}
 
             {/* Navigation Arrows */}
-            {(navigation.prev || navigation.next) && (
+            {navigation && (navigation.prev || navigation.next) && (
               <>
                 {/* Previous Arrow */}
                 {navigation.prev && (
@@ -139,9 +139,11 @@ export default function ArtworkPage() {
             )}
 
             {/* Collection Info - Bottom of Image */}
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-sm text-neutral-700 text-sm px-3 py-1 rounded-full shadow-lg">
-              {navigation.currentIndex} of {navigation.total} in {navigation.collection}
-            </div>
+            {navigation && (
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-sm text-neutral-700 text-sm px-3 py-1 rounded-full shadow-lg">
+                {navigation.currentIndex} of {navigation.total} in {navigation.collection}
+              </div>
+            )}
           </div>
 
           {/* Details */}
