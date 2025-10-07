@@ -6,6 +6,7 @@ import GalleryGrid from '@/components/gallery/GalleryGrid';
 import Filters from '@/components/gallery/Filters';
 import { 
   getMockArtworks, 
+  getMockRecentArtworks,
   mockMediums, 
   mockStyles, 
   mockThemes, 
@@ -49,8 +50,8 @@ export default function GalleryContent() {
     const fetchGalleryData = async () => {
       try {
         setIsLoading(true);
-        // In a real app, this would be an API call with filters
-        const data = getMockArtworks(1, 12);
+        // Use the new cycling system - shows previous weekly features + regular artworks
+        const data = getMockRecentArtworks(1, 12);
         
         setGalleryData({
           artworks: data.artworks,
@@ -95,7 +96,7 @@ export default function GalleryContent() {
         <div className="mb-8">
           <h1 className="text-4xl md:text-5xl font-light mb-6 tracking-wide text-white">g a l l e r y</h1>
           <p className="text-neutral-300 text-lg">
-            discover artworks from the rialo community
+            previous weekly features and artworks from the rialo community
           </p>
         </div>
 
@@ -117,9 +118,9 @@ export default function GalleryContent() {
           <GalleryGrid 
             initialData={galleryData}
             onLoadMore={async (page: number) => {
-              // In a real app, this would load more artworks
-              console.log('Load more artworks, page:', page);
-              return getMockArtworks(page, 12);
+              // Load more recent artworks (cycling system)
+              console.log('Load more recent artworks, page:', page);
+              return getMockRecentArtworks(page, 12);
             }}
           />
         )}

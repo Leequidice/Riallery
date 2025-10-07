@@ -9,23 +9,28 @@ import {
   mockMemes, 
   mockGifs, 
   mockArtists,
-  weeklyFeaturedArtworks,
-  weeklyFeaturedMemes,
-  weeklyFeaturedGifs 
+  getMockWeeklyFeaturedArtworks,
+  getMockWeeklyFeaturedMemes,
+  getMockWeeklyFeaturedGifs,
+  getCurrentWeeklyFeatures,
+  getMockRecentArtworks 
 } from '@/lib/mock-data';
 
 export default function Home() {
-  const recentArtworks = getMockArtworks(1, 8).artworks;
+  // Use the new cycling system for recent artworks
+  const recentArtworks = getMockRecentArtworks(1, 8).artworks;
+  
+  // Get current weekly featured content (current rotation only)
+  const currentWeeklyFeatures = getCurrentWeeklyFeatures();
   
   // Calculate real stats
-  const totalArtworks = mockArtworks.length + weeklyFeaturedArtworks.length; // Only artworks, not memes/gifs
-  const totalContent = mockArtworks.length + mockMemes.length + mockGifs.length + weeklyFeaturedArtworks.length + weeklyFeaturedMemes.length + weeklyFeaturedGifs.length; // All content
+  const totalArtworks = mockArtworks.length; // Only artworks, not memes/gifs
+  const totalContent = mockArtworks.length + mockMemes.length + mockGifs.length; // All content
   const totalArtists = mockArtists.length;
-  const totalFeatures = weeklyFeaturedArtworks.length + weeklyFeaturedMemes.length + weeklyFeaturedGifs.length;
+  const totalFeatures = currentWeeklyFeatures.length; // Only current features count
   
-  // Combine all weekly features and shuffle them
-  const allWeeklyFeatures = [...weeklyFeaturedArtworks, ...weeklyFeaturedMemes, ...weeklyFeaturedGifs];
-  const shuffledFeatures = allWeeklyFeatures.sort(() => Math.random() - 0.5);
+  // Shuffle current weekly features for display
+  const shuffledFeatures = currentWeeklyFeatures.sort(() => Math.random() - 0.5);
 
   return (
     <div className="min-h-screen">
@@ -99,10 +104,10 @@ export default function Home() {
             <div className="max-w-6xl mx-auto">
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-teal-300 mb-4">
-                  This Week&apos;s Features
+                  Current Weekly Features
                 </h2>
                 <p className="text-lg max-w-2xl mx-auto" style={{color: '#e8e3d5'}}>
-                  Celebrating exceptional artwork, memes, and GIFs from our community
+                  This week&apos;s spotlight on exceptional artwork, memes, and GIFs from our community
                 </p>
               </div>
 
@@ -121,7 +126,7 @@ export default function Home() {
                 Recent Artworks
               </h2>
               <p className="text-lg max-w-2xl mx-auto" style={{color: '#e8e3d5'}}>
-                Latest additions to our growing collection
+                Previous weekly features and latest additions to our collection
               </p>
             </div>
 

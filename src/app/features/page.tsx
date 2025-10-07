@@ -11,9 +11,8 @@ import ArtworkCard from '@/components/gallery/ArtworkCard';
 import { Button } from '@/components/ui/Button';
 import MediaDisplay from '@/components/ui/MediaDisplay';
 import { 
-  getMockWeeklyFeaturedArtworks, 
-  getMockWeeklyFeaturedMemes, 
-  getMockWeeklyFeaturedGifs 
+  getCurrentWeeklyFeatures,
+  getPreviousWeeklyFeatures
 } from '@/lib/mock-data';
 import type { Artwork } from '@/types';
 
@@ -23,9 +22,14 @@ function FeaturesContent() {
   const [activeSection, setActiveSection] = useState<SectionType>('arts');
   const [selectedArtwork, setSelectedArtwork] = useState<Artwork | null>(null);
 
-  const weeklyArts = getMockWeeklyFeaturedArtworks();
-  const weeklyMemes = getMockWeeklyFeaturedMemes();
-  const weeklyGifs = getMockWeeklyFeaturedGifs();
+  // Get current weekly features using the cycling system
+  const currentFeatures = getCurrentWeeklyFeatures();
+  const previousFeatures = getPreviousWeeklyFeatures();
+
+  // Filter current features by content type
+  const weeklyArts = currentFeatures.filter(artwork => artwork.contentType === 'artwork');
+  const weeklyMemes = currentFeatures.filter(artwork => artwork.contentType === 'meme');
+  const weeklyGifs = currentFeatures.filter(artwork => artwork.contentType === 'gif');
 
   const getCurrentArtworks = () => {
     switch (activeSection) {
@@ -85,11 +89,19 @@ function FeaturesContent() {
               </h1>
             </div>
             <p className="text-neutral-300 text-lg mb-6 max-w-2xl mx-auto">
-              discover this week&apos;s handpicked selections from the rialo community
+              current week&apos;s handpicked selections from the rialo community
             </p>
+            <div className="bg-neutral-800 border border-neutral-700 rounded-lg p-4 mb-6 max-w-3xl mx-auto">
+              <p className="text-sm text-neutral-400">
+                <span className="text-primary-400 font-medium">Cycling System:</span> When new artworks are featured, 
+                current features automatically move to the <a href="/gallery" className="text-primary-400 underline hover:no-underline">main gallery</a> as "Recent Artworks."
+                <br />
+                <span className="text-primary-400 font-medium">Previous Features:</span> {previousFeatures.length} artworks have been rotated to Recent Artworks.
+              </p>
+            </div>
             <div className="flex items-center justify-center text-neutral-400 text-sm">
               <Calendar className="h-4 w-4 mr-2" />
-              <span>Updated September 28, 2025</span>
+              <span>Current rotation: October 7, 2025</span>
             </div>
           </motion.div>
         </div>
@@ -212,13 +224,40 @@ function FeaturesContent() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
-            className="mt-12 text-center"
+            className="mt-12"
           >
-            <div className="inline-flex items-center bg-neutral-800 rounded-full px-6 py-3">
-              <Star className="h-4 w-4 text-primary-400 mr-2" />
-              <span className="text-neutral-300 text-sm">
-                Featuring {getSectionCount()} handpicked {activeSection} from the community
-              </span>
+            <div className="text-center mb-6">
+              <div className="inline-flex items-center bg-neutral-800 rounded-full px-6 py-3">
+                <Star className="h-4 w-4 text-primary-400 mr-2" />
+                <span className="text-neutral-300 text-sm">
+                  Featuring {getSectionCount()} handpicked {activeSection} from the community
+                </span>
+              </div>
+            </div>
+            
+            {/* Cycling System Info */}
+            <div className="bg-neutral-800 border border-neutral-700 rounded-lg p-6 max-w-4xl mx-auto">
+              <h3 className="text-lg font-medium text-white mb-4">How the Cycling System Works</h3>
+              <div className="grid md:grid-cols-2 gap-6 text-sm">
+                <div>
+                  <h4 className="text-primary-400 font-medium mb-2">Current Features ({currentFeatures.length})</h4>
+                  <p className="text-neutral-300 mb-2">
+                    These are the artworks currently in the weekly spotlight, displayed on this page and the homepage.
+                  </p>
+                  <p className="text-neutral-400 text-xs">
+                    Featured since: October 7, 2025
+                  </p>
+                </div>
+                <div>
+                  <h4 className="text-primary-400 font-medium mb-2">Previous Features ({previousFeatures.length})</h4>
+                  <p className="text-neutral-300 mb-2">
+                    Former weekly features that have rotated to the <a href="/gallery" className="text-primary-400 underline hover:no-underline">main gallery</a> as "Recent Artworks."
+                  </p>
+                  <p className="text-neutral-400 text-xs">
+                    Available in Recent Artworks section
+                  </p>
+                </div>
+              </div>
             </div>
           </motion.div>
         )}
