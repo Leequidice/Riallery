@@ -2,6 +2,7 @@
 
 import { Suspense } from 'react';
 import { Loader2 } from 'lucide-react';
+import Link from 'next/link';
 
 // Inline the component instead of importing
 import { useState } from 'react';
@@ -94,7 +95,7 @@ function FeaturesContent() {
             <div className="bg-neutral-800 border border-neutral-700 rounded-lg p-4 mb-6 max-w-3xl mx-auto">
               <p className="text-sm text-neutral-400">
                 <span className="text-primary-400 font-medium">Cycling System:</span> When new artworks are featured, 
-                current features automatically move to the <a href="/gallery" className="text-primary-400 underline hover:no-underline">main gallery</a> as "Recent Artworks."
+                current features automatically move to the <Link href="/gallery" className="text-primary-400 underline hover:no-underline">main gallery</Link> as &quot;Recent Artworks.&quot;
                 <br />
                 <span className="text-primary-400 font-medium">Previous Features:</span> {previousFeatures.length} artworks have been rotated to Recent Artworks.
               </p>
@@ -251,7 +252,7 @@ function FeaturesContent() {
                 <div>
                   <h4 className="text-primary-400 font-medium mb-2">Previous Features ({previousFeatures.length})</h4>
                   <p className="text-neutral-300 mb-2">
-                    Former weekly features that have rotated to the <a href="/gallery" className="text-primary-400 underline hover:no-underline">main gallery</a> as "Recent Artworks."
+                    Former weekly features that have rotated to the <Link href="/gallery" className="text-primary-400 underline hover:no-underline">main gallery</Link> as &quot;Recent Artworks.&quot;
                   </p>
                   <p className="text-neutral-400 text-xs">
                     Available in Recent Artworks section

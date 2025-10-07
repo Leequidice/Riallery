@@ -4,14 +4,10 @@ import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import RotatingFeature from '@/components/home/RotatingFeature';
 import { 
-  getMockArtworks, 
   mockArtworks, 
   mockMemes, 
   mockGifs, 
   mockArtists,
-  getMockWeeklyFeaturedArtworks,
-  getMockWeeklyFeaturedMemes,
-  getMockWeeklyFeaturedGifs,
   getCurrentWeeklyFeatures,
   getMockRecentArtworks 
 } from '@/lib/mock-data';
@@ -24,7 +20,6 @@ export default function Home() {
   const currentWeeklyFeatures = getCurrentWeeklyFeatures();
   
   // Calculate real stats
-  const totalArtworks = mockArtworks.length; // Only artworks, not memes/gifs
   const totalContent = mockArtworks.length + mockMemes.length + mockGifs.length; // All content
   const totalArtists = mockArtists.length;
   const totalFeatures = currentWeeklyFeatures.length; // Only current features count

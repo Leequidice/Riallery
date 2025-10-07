@@ -5,7 +5,6 @@ import { useSearchParams } from 'next/navigation';
 import GalleryGrid from '@/components/gallery/GalleryGrid';
 import Filters from '@/components/gallery/Filters';
 import { 
-  getMockArtworks, 
   getMockRecentArtworks,
   mockMediums, 
   mockStyles, 
